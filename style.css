@@ -1,0 +1,19 @@
+h1{
+    font-size: 200%;
+    font-family: Helvetica;
+    text-align: center;
+    color: indianred;
+    background-color: transparent;
+}
+body{
+    font-family: Helvetica;
+    color:rgb(205, 92, 92);
+    background-image: url("background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color:#CCCC;
+    min-height: 100vb;
+}
+footer{
+    margin-top: auto;
+}
