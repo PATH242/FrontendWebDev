@@ -13,8 +13,8 @@ interface comicAPI{
 async function getComicID(){
     const id_url : string = 'https://fwd.innopolis.app/api/hw2?email=m.awadallah@innopolis.university';
     let response : Response = await fetch(id_url);
-    let data : comicAPI = await response.json();
-    let comic_id : number = Number(data);
+    let responseData : comicAPI = await response.json();
+    let comic_id : number = Number(responseData);
     console.log(comic_id)
     return comic_id;
 }
@@ -22,11 +22,11 @@ async function getComicID(){
 async function getComic(comic_id : number){
     var comic_url : string = 'https://getxkcd.vercel.app/api/comic?num=' + comic_id;
     let response : Response = await fetch(comic_url);
-    let data  : comicAPI = await response.json();
-    const image_title : string = data.title;
-    const image_url : string = data.img;
-    const image_alt : string = data.alt;
-    const image_year : number = parseInt(data.year), image_month : number = parseInt(data.month), image_day : number = parseInt(data.day);
+    let responseData  : comicAPI = await response.json();
+    const image_title : string = responseData.title;
+    const image_url : string = responseData.img;
+    const image_alt : string = responseData.alt;
+    const image_year : number = parseInt(responseData.year), image_month : number = parseInt(responseData.month), image_day : number = parseInt(responseData.day);
     const image_date : Date = new Date(image_year, image_month -1, image_day);
     const options  = {
         weekday : "long" as const,
@@ -41,6 +41,8 @@ async function getComic(comic_id : number){
     const comic_h3 = document.createElement('h3');
     const comic_title = document.createTextNode(image_title);
     document.getElementById('joke')?.appendChild(comic_title);
+    comic_h3.appendChild(comic_title);
+    document.getElementById('joke')?.appendChild(comic_h3);
 
     const joke_element = document.getElementById('joke');
     const comic = document.createElement('img');
