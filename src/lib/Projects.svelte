@@ -1,4 +1,4 @@
-
+<script lang="ts"></script>
     <h3>Main projects:</h3>
     <ul>
         <li><a href="https://github.com/Maves1/SSADProject">Basic Delivery system</a> </li>

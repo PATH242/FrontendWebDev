@@ -4,7 +4,8 @@
     <h4>{comic_date_ar} {comic_date_eng}</h4>
 </div>
 <script lang="ts">
-    import type { comicAPI } from './comic.ts';
+    import type { comicAPI } from "./comic";
+    import loading from "../assets/loading.jpg"
     // Get a random number to be used as an XKCD comic identifier.
     async function getComicID(){
         const id_url : string = 'https://fwd.innopolis.app/api/hw2?email=m.awadallah@innopolis.university';
@@ -15,7 +16,7 @@
         return comic_id;
     }
     let image_title : string = "Loading comic";
-    let image_url : string = "../assets/loading.jpg";
+    let image_url : string = loading;
     let image_alt : string = "loading";
     let comic_date_ar : string, comic_date_eng : string;
     // Get image, its name, its alt text, and its date from XKCD API using fetch.
@@ -51,11 +52,5 @@
     flex-direction: column;
     align-items: center;
     flex-wrap: wrap;
-    }
-    #jokeTitle{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        flex-wrap: wrap;
     }
 </style>
