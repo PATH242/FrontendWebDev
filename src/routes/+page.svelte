@@ -4,14 +4,11 @@
     import Projects from "$lib/Projects.svelte";
 </script>
 
-<body>
+<p>
     <Bio />
     <Projects/>
     <Comic />
-    <main>
-        <h3>Connect on:</h3>
-    </main>
-</body>
+    <h3>Connect on:</h3>
 <style>
   body{
   font-family: Helvetica;
