@@ -7,7 +7,7 @@
     import type { comicAPI } from "./comic";
     import loading from "../assets/loading.jpg"
     // Get a random number to be used as an XKCD comic identifier.
-    async function getComicID(){
+    export async function getComicID(){
         const id_url : string = 'https://fwd.innopolis.app/api/hw2?email=m.awadallah@innopolis.university';
         let response : Response = await fetch(id_url);
         let responseData = await response.json();
@@ -20,7 +20,7 @@
     let image_alt : string = "loading";
     let comic_date_ar : string, comic_date_eng : string;
     // Get image, its name, its alt text, and its date from XKCD API using fetch.
-    async function getComic(comic_id : number){
+    export async function getComic(comic_id : number){
         var comic_url : string = 'https://getxkcd.vercel.app/api/comic?num=' + comic_id;
         let response : Response = await fetch(comic_url);
         let responseData  : comicAPI = await response.json();
@@ -41,7 +41,10 @@
     }
 
     getComicID().then(comic_id => processComicID(comic_id)).catch(err => console.log(err.message));
-    function processComicID(comic_id : number){
+    //export async function load() {
+    //  getComicID().then(comic_id => processComicID(comic_id)).catch(err => console.log(err.message));
+    //}
+    export function processComicID(comic_id : number){
         console.log(comic_id);
         getComic(comic_id).catch(err => console.log(err.message));
     }

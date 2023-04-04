@@ -8,6 +8,9 @@ pnpm-debug.log*
 lerna-debug.log*
 build
 node_modules
+.svelte-kit
+svelte-kit
+svelte
 dist
 dist-ssr
 *.local

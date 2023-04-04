@@ -47,6 +47,12 @@ const Comic = create_ssr_component(($$result, $$props, $$bindings, slots) => {
     console.log(comic_id);
     getComic(comic_id).catch((err) => console.log(err.message));
   }
+  if ($$props.getComicID === void 0 && $$bindings.getComicID && getComicID !== void 0)
+    $$bindings.getComicID(getComicID);
+  if ($$props.getComic === void 0 && $$bindings.getComic && getComic !== void 0)
+    $$bindings.getComic(getComic);
+  if ($$props.processComicID === void 0 && $$bindings.processComicID && processComicID !== void 0)
+    $$bindings.processComicID(processComicID);
   $$result.css.add(css);
   return `<div id="joke" class="svelte-14aprtu"><h3>${escape(image_title)}</h3>
     <img${add_attribute("src", image_url, 0)}${add_attribute("alt", image_alt, 0)}>
