@@ -8,16 +8,16 @@
     import loading from "../assets/loading.jpg"
     // Get a random number to be used as an XKCD comic identifier.
     export async function getComicID(){
-        const id_url : string = 'https://fwd.innopolis.app/api/hw2?email=m.awadallah@innopolis.university';
+        const id_url  = 'https://fwd.innopolis.app/api/hw2?email=m.awadallah@innopolis.university';
         let response : Response = await fetch(id_url);
         let responseData = await response.json();
-        let comic_id : number = Number(responseData);
+        let comic_id  = Number(responseData);
         console.log(comic_id)
         return comic_id;
     }
-    let image_title : string = "Loading comic";
+    let image_title  = "Loading comic";
     let image_url : string = loading;
-    let image_alt : string = "loading";
+    let image_alt  = "loading";
     let comic_date_ar : string, comic_date_eng : string;
     // Get image, its name, its alt text, and its date from XKCD API using fetch.
     export async function getComic(comic_id : number){
