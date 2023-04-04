@@ -1,7 +1,6 @@
 import './app.css'
 import App from './App.svelte'
-
-var ghpages = require('gh-pages');
+import ghpages from "gh-pages"
 
 ghpages.publish(
     'public', // path to public directory
