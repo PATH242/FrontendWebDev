@@ -6,7 +6,7 @@ const Bio = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 });
 const loading = "/PATH242.github.io/_app/immutable/assets/loading.1e745bb5.jpg";
 const Comic_svelte_svelte_type_style_lang = "";
-const css$1 = {
+const css = {
   code: "#joke.svelte-14aprtu{display:flex;flex-direction:column;align-items:center;flex-wrap:wrap}",
   map: null
 };
@@ -47,7 +47,7 @@ const Comic = create_ssr_component(($$result, $$props, $$bindings, slots) => {
     console.log(comic_id);
     getComic(comic_id).catch((err) => console.log(err.message));
   }
-  $$result.css.add(css$1);
+  $$result.css.add(css);
   return `<div id="joke" class="svelte-14aprtu"><h3>${escape(image_title)}</h3>
     <img${add_attribute("src", image_url, 0)}${add_attribute("alt", image_alt, 0)}>
     <h4>${escape(comic_date_ar)} ${escape(comic_date_eng)}</h4>
@@ -62,18 +62,11 @@ const Projects = create_ssr_component(($$result, $$props, $$bindings, slots) => 
         <li><a href="https://github.com/mariammaher550/raft-grpc">Distributed system using raft algorithm</a></li>
         <li><a href="https://github.com/PATH242/Differential-equations">Differential-equations solver </a></li></ul>`;
 });
-const _page_svelte_svelte_type_style_lang = "";
-const css = {
-  code: 'body.svelte-gm0wqn{font-family:Helvetica;color:rgb(205, 92, 92);background-image:url("../assets/background.jpg");background-repeat:no-repeat;background-size:cover;background-color:#CCCC;min-height:100vb}',
-  map: null
-};
 const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  $$result.css.add(css);
-  return `<body class="svelte-gm0wqn">${validate_component(Bio, "Bio").$$render($$result, {}, {}, {})}
-    ${validate_component(Projects, "Projects").$$render($$result, {}, {}, {})}
-    ${validate_component(Comic, "Comic").$$render($$result, {}, {}, {})}
-    <main><h3>Connect on:</h3></main>
-</body>`;
+  return `<p>${validate_component(Bio, "Bio").$$render($$result, {}, {}, {})}
+  ${validate_component(Projects, "Projects").$$render($$result, {}, {}, {})}
+  ${validate_component(Comic, "Comic").$$render($$result, {}, {}, {})}
+  </p><h3>Connect on:</h3>`;
 });
 export {
   Page as default
