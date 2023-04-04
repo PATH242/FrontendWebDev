@@ -26,17 +26,27 @@
 	},
 	"type": "module",
 	"eslintConfig": {
-		"extends": ["eslint:recommended", "plugin:prettier/recommended"],
-		"plugins": ["svelte3"],
+		"extends": [
+			"eslint:recommended",
+			"plugin:prettier/recommended"
+		],
+		"plugins": [
+			"svelte3"
+		],
 		"overrides": [
-		  {
-			"files": ["**/*.svelte"],
-			"processor": "svelte3/svelte3"
-		  }
+			{
+				"files": [
+					"**/*.svelte"
+				],
+				"processor": "svelte3/svelte3"
+			}
 		]
-	  },
-	  "prettier": {
+	},
+	"prettier": {
 		"semi": false,
 		"singleQuote": true
-	  }
+	},
+	"dependencies": {
+		"gh-pages": "^5.0.0"
+	}
 }

@@ -9,6 +9,7 @@ lerna-debug.log*
 build
 svelte-kit
 .svelte-kit
+svelte
 node_modules
 dist
 dist-ssr
