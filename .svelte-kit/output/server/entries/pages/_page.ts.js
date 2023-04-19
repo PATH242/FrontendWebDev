@@ -15,7 +15,6 @@ async function getComic(comic_id, fetch) {
 const load = async ({ fetch }) => {
   const id = await getComicID(fetch);
   const comic = await getComic(id, fetch);
-  console.log(comic);
   return {
     comic
   };

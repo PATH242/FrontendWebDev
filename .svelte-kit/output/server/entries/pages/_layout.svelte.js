@@ -1,5 +1,6 @@
 import { c as create_ssr_component, e as escape, v as validate_component } from "../../chunks/index.js";
 import { b as base } from "../../chunks/paths.js";
+const app = "";
 const Footer_svelte_svelte_type_style_lang = "";
 const css = {
   code: "footer.svelte-11i077m{margin-top:auto}",
